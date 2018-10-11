@@ -14,10 +14,26 @@ $contentWidth: 300px;
     text-transform: $textTransform;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: #171717;
     color: $fontColor;
-    text-align: center;
+}
+
+#left {
+    width: 25%;
+    height: 100%;
+    background-color: #121212;
+    padding: 15px;
+    box-shadow: 4px 0 1px rgba(0,0,0, 0.30);
+}
+
+#right {
+    width: auto;
 }
 
 #content {
@@ -36,6 +52,14 @@ h1 {
 p {
     margin-top: 0px;
     margin-bottom: 10px;
+}
+
+ul {
+
+}
+
+li {
+    padding: 0;
 }
 
 #result {
