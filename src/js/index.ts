@@ -1,12 +1,26 @@
-interface Person {
-    firstName: string;
-    lastName: string;
-}
+// Magic Line to Import Axios.. :S
+import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
 
-function greeter(person: Person): string {
-    return "Hello, " + person.firstName + " " + person.lastName;
-}
-let user: Person = { firstName: "John", lastName: "Doe" };
+// References to all the HTML elements needed.
+let inputId: HTMLInputElement = <HTMLInputElement> document.getElementById("inputId");
+let btnLookUp: HTMLButtonElement = <HTMLButtonElement> document.getElementById("buttonLookUp");
+let result: HTMLDivElement = <HTMLDivElement> document.getElementById("result");
 
-let element: HTMLDivElement = <HTMLDivElement> document.getElementById("content");
-element.innerHTML = greeter(user);
+// Variable to store the general URL used.
+var baseURL: string = "https://jsonplaceholder.typicode.com";
+
+// Function, that looks up the JSON objects based on the input by the user.
+function lookUp(event: MouseEvent) {
+  axios.get(baseURL + '/users/' + inputId.value)
+  .then(function (response) {
+    result.innerHTML = "<p>" + JSON.stringify(response.data.name) + "</p>";
+    result.innerHTML += "<p>" + JSON.stringify(response.data.username) + "</p>";
+    result.innerHTML += "<p>" + JSON.stringify(response.data.email) + "</p>";
+  })
+  .catch(function (error) {
+    result.innerHTML = error;
+  });
+} 
+
+// Attach the above function to the button.
+btnLookUp.addEventListener("click", lookUp);

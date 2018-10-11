@@ -1,15 +1,89 @@
-$fontColor: #0091aa;
-$colorHeading: #be4a14;
-#content  // div with id: content
-{
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Signika+Negative');
+
+$fontColor: #eee;
+$colorHeading: #0091aa;
+$fontHeading: 'Roboto', sans-serif;
+$fontWeight: 900;
+$textTransform: uppercase;
+$contentWidth: 300px;
+
+* {
+    font-family: $fontHeading;
+    font-weight: $fontWeight;
+    text-transform: $textTransform;
+}
+
+body {
+    background: #171717;
     color: $fontColor;
+    text-align: center;
 }
 
-h2
-{
+#content {
+    color: $fontColor;
+    width: $contentWidth;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
     color: $colorHeading;
+    font-size: 26px;
+    margin-bottom: 50px;
 }
 
-h1{
-    @extend h2;
+p {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#result {
+    background-color: #172831;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    padding: 20px 20px 10px 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #eee;
+}
+
+input {
+    display: block;
+    color: #333;
+    padding: 9px;
+    font-family: $fontHeading;
+    font-size: 20px;
+    border: 0 none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 2px 10px -6px #000;
+    width: 282px;
+}
+
+button {    
+    background-color: #2d617a;
+    border: 0 none;
+    border-radius: 4px;
+    box-shadow: 0 3px 0 rgba(49,112,142, 0.55);
+    color: #eee;
+    display: block;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out 0s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #427f9b;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+button:active {
+    box-shadow: 0;
 }
