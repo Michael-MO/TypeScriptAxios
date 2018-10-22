@@ -30,7 +30,7 @@ let nav: HTMLUListElement = <HTMLUListElement> document.getElementById("navigati
 axios.get(baseURL + '/users')
 .then(function (response) {
   for (let d of response.data) {
-    nav.appendChild(document.createElement("li")).setAttribute("id", JSON.stringify(d.name);
+    nav.appendChild(document.createElement("li")).setAttribute("id", JSON.stringify(d.name));
     document.getElementById(JSON.stringify(d.name)).innerHTML = JSON.stringify(d.name);
   }
 });
